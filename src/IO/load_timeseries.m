@@ -111,6 +111,12 @@ function [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input)
         ttsR  = calczenithangle(DOY_,time_ - xyt.timezn ,0,0,xyt.LON,xyt.LAT);     %sun zenith angle in rad
         V(vi_tts).Val = min(85, ttsR / pi * 180);     
     end
+    
+    % optional calculation the sun azimuth and sun-sensor relative azimuth angle (psi) dynamically 
+ if options.dynamic_azimuth
+     relazi     = equations.calcazimuthangle(DOY_,time_ - xyt.timezn,xyt.LON,xyt.LAT,V(65).Val,V(51).Val);
+     V(53).Val  = relazi;
+ end
 
     %% ea calculation
     if ~any(strcmp(f_ids, 'ea')) && any(strcmp(f_ids, 'Ta'))  % ea wasn't read but Ta was
