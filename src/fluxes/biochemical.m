@@ -246,6 +246,13 @@ if strcmp('C3', Type)
 end
 Gamma_star   = Gamma_star25 .* f.Gamma_star;
 
+%% initializations (these are overwritten further down in the code and should not affect output)
+ Vc = 0.0;
+ Vs = 0.0;
+ Ve = 0.0;
+ CO2_per_electron = 1./6.;
+ Ag = 1.0;
+
 %% calculation of potential electron transport rate
 po0         = Kp./(Kf+Kd+Kp);         % maximum dark photochemistry fraction, i.e. Kn = 0 (Genty et al., 1989)
 Je          = 0.5*po0 .* Q;          % potential electron transport rate (JAK: add fPAR);
