@@ -76,6 +76,7 @@ V(65).Name                  = 'rs_thermal';
 V(66).Name                  = 'cs';
 V(67).Name                  = 'rhos';
 V(68).Name                  = 'lambdas';
+V(69).Name                  = 'vazi'; 
 
 %V(69).Name                  = 'Cv'; 
 %V(70).Name                  = 'crowndiameter'; 
