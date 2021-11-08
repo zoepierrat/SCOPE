@@ -60,6 +60,7 @@ options.simulation          = N(11);    % 0: individual runs (specify all input 
 % 1: time series (uses text files with meteo input as time series)
 % 2: Lookup-Table (specify the values to be included)
 % 3: Lookup-Table with random input (specify the ranges of values)
+options.dynamic_azimuth     = N(19);    % 0; calculate the relative azimuth (psi) each time step given a fixed observation azimuth angle
 options.calc_directional     = N(12);    % 0: calculate full BRDF (many angles)
 options.calc_vert_profiles   = N(13);
 options.soil_heat_method     = N(14);  % 0 - GAM=Soil_Inertia0(lambdas), 1 - GAM=Soil_Inertia1(SMC), 2 - G=0.35*Rn (always in no TS)
