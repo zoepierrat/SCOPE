@@ -45,6 +45,7 @@ if options.save_spectral
     fnames.Lo_file                 = fullfile(Output_dir,'Lo_spectrum.bin');
     fnames.Esun_file               = fullfile(Output_dir,'Esun.bin');
     fnames.Esky_file               = fullfile(Output_dir,'Esky.bin');
+    fnames.Agtot_file              = fullfile(Output_dir,'Agtot.bin');
 end
 fnames.resist_file             = fullfile(Output_dir,'resistances.bin');
 
