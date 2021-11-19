@@ -13,7 +13,7 @@ tau_thermal,0.01
 ,
 Leaf_Biochemical,
 Vcmax25,60
-BallBerrySlope,8
+BallBerrySlope,0.027
 BallBerry0,0.01
 Type,0
 kV,0.6396
@@ -65,8 +65,8 @@ Ca,380
 Oa,209
 ,
 Aerodynamic,
-zo,1.986
-d,10.72
+zo,(0.123*hc)
+d,(0.67*hc)
 Cd,0.3
 rb,10
 CR,0.35
