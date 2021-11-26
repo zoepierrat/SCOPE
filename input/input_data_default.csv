@@ -87,3 +87,5 @@ Angles,
 tts,30
 tto,0
 psi,90
+vazi	180						deg	fixed point observation azimuth angle e.g. 180=North (only used if options.dynamic_azimuth = 1)
+sazi	0					  	deg	solar azimuth angle
