@@ -33,7 +33,7 @@ n_col.flu = length(flu_out);
 fwrite(f.flu_file,flu_out,'double');
 
 %% Radiation
-rad_out = [k xyt.year(k) xyt.t(k) meteo.Rin, meteo.Rli, rad.Eouto, rad.Eoutt + rad.Eoutte, ...
+rad_out = [k xyt.year(k) xyt.t(k) rad.tts rad.sazi rad.psi meteo.Rin, meteo.Rli, rad.Eouto, rad.Eoutt + rad.Eoutte, ...
     rad.Lo, rad.Lot, rad.Lote];
 n_col.rad = length(rad_out);
 fwrite(f.rad_file,rad_out,'double');
