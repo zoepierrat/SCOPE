@@ -368,6 +368,9 @@ biochem_out.Fm_Fo   = fm ./ fo;  % parameters used for curve fitting
 biochem_out.Ft_Fo   = fs ./ fo;  % parameters used for curve fitting
 biochem_out.qQ      = qQ;
 biochem_out.Phi_N   = Kn./(Kn +Kp+Kf+Kd);
+biochem_out.phi_fs  = phi_fs;
+biochem_out.phi_p   = phi_p;
+biochem_out.phi_npq = phi_npq;
 return;
 
 end  % end of function biochemical
