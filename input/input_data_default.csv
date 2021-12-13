@@ -65,7 +65,7 @@ Ca,380
 Oa,209
 ,
 Aerodynamic,
-zo,(0.123*hc)
+zo,0.123*hc
 d,(0.67*hc)
 Cd,0.3
 rb,10
