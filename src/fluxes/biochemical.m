@@ -246,6 +246,13 @@ if strcmp('C3', Type)
 end
 Gamma_star   = Gamma_star25 .* f.Gamma_star;
 
+%% initializations (these are overwritten further down in the code and should not affect output)
+ Vc = 0.0;
+ Vs = 0.0;
+ Ve = 0.0;
+ CO2_per_electron = 1./6.;
+ Ag = 1.0;
+
 %% calculation of potential electron transport rate
 po0         = Kp./(Kf+Kd+Kp);         % maximum dark photochemistry fraction, i.e. Kn = 0 (Genty et al., 1989)
 Je          = 0.5*po0 .* Q;          % potential electron transport rate (JAK: add fPAR);
@@ -308,6 +315,17 @@ ps_rel   = max(0,  1-ps./po0);       % degree of light saturation: 'x' (van der 
 [eta,qE,qQ,fs,fo,fm,fo0,fm0,Kn]    = Fluorescencemodel(ps, ps_rel, Kp,Kf,Kd,Knparams);
 Kpa         = ps./fs*Kf;
 
+% Calculate PSII quantum yields
+ % - derived steady-state (light-adapted) photochemistry
+ %   rate constant van der Tol et al. (2014)
+ Kp_s        = (fm ./ fs - 1.0).*(Kf+Kd+Kn);
+ % - non-photochemical quenching rate constant (combined Kn+Kd)
+ Knpq        = Kn+Kd;
+ % - quantum yields expressed by rate constants (Butler, 1978; van der Tol et al., 2014)
+ phi_fs      = Kf ./ (Kn+Kp_s+Kd+Kf);
+ phi_p       = Kp_s ./ (Kn+Kp_s+Kd+Kf);
+ phi_npq     = Knpq ./ (Kn+Kp_s+Kd+Kf);
+
 %% convert back to ppm
 Cc = [];
 if ~isempty(g_m)
@@ -318,6 +336,7 @@ Ci          = Ci  ./ ppm2bar;
 
 %% Collect outputs
 biochem_out.A       = A;
+biochem_out.Ag      = Ag;
 biochem_out.Ci      = Ci;
 if ~isempty(Cc)
     biochem_out.Cc = Cc;
@@ -349,6 +368,9 @@ biochem_out.Fm_Fo   = fm ./ fo;  % parameters used for curve fitting
 biochem_out.Ft_Fo   = fs ./ fo;  % parameters used for curve fitting
 biochem_out.qQ      = qQ;
 biochem_out.Phi_N   = Kn./(Kn +Kp+Kf+Kd);
+biochem_out.phi_fs  = phi_fs;
+biochem_out.phi_p   = phi_p;
+biochem_out.phi_npq = phi_npq;
 return;
 
 end  % end of function biochemical

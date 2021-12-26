@@ -81,6 +81,8 @@ xyt.timezn          = V(50).Val(vi(50));
 angles.tts          = V(51).Val(vi(51));
 angles.tto          = V(52).Val(vi(52));
 angles.psi          = V(53).Val(vi(53));
+angles.vazi         = V(69).Val(vi(69));
+angles.sazi = V(70).Val(vi(70));
 
 if mean(soil.SMC) > 1
     soil.SMC        = soil.SMC / 100;  % SMC from [0 100] to [0 1]
