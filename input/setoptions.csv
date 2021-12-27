@@ -5,10 +5,10 @@
 0,soilspectrum
 0,Fluorescence_model
 1,applTcorr
-1,verify
+0,verify
 1,saveCSV
 0,mSCOPE
-0,simulation
+1,simulation
 0,calc_directional
 0,calc_vert_profiles
 2,soil_heat_method

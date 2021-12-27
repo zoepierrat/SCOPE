@@ -38,8 +38,12 @@ flu_units = {'', '', '', '',  ...
 write_output(flu_names, flu_units, fnames.flu_file, n_col.flu, ns)
 
 %% rad
-rad_names = {'simulation_number','year','DoY','ShortIn','LongIn','HemisOutShort','HemisOutLong','Lo','Lot','Lote'};
-rad_units = {'','','','W m-2','W m-2','W m-2','W m-2','W m-2 sr-1','W m-2 sr-1','W m-2 sr-1'};
+%rad_out = [k xyt.year(k) xyt.t(k) rad.tts rad.sazi rad.psi meteo.Rin, meteo.Rli, rad.Eouto, rad.Eoutt + rad.Eoutte, ...
+%    rad.Lo, rad.Lot, rad.Lote]; added rad.tts, rad.sazi and rad.psi (azimuthal difference between solar and observation angle) to
+%    output_data_binary.m 
+
+rad_names = {'simulation_number','year','DoY','tts','sazi','psi','ShortIn','LongIn','HemisOutShort','HemisOutLong','Lo','Lot','Lote'};
+rad_units = {'','','','','','','W m-2','W m-2','W m-2','W m-2','W m-2 sr-1','W m-2 sr-1','W m-2 sr-1'};
 write_output(rad_names, rad_units, fnames.rad_file, n_col.rad, ns)
 
 %% fluor
