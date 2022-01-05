@@ -201,7 +201,7 @@ if options.simulation == 1
         end
     end
     [soil,leafbio,canopy,meteo,angles,xyt]  = select_input(V,vi,canopy,options,constants);
-    [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input);
+    [V, xyt, mly_ts, atmo_paths]  = load_timeseries(V, F, xyt, path_input,options);
 else
     soil = struct;
 end
