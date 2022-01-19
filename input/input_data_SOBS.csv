@@ -77,8 +77,8 @@ rbs,10
 rwc,0
 ,
 timeseries,
-startDOY,2019080100
-endDOY,2019081000
+startDOY,2019010100
+endDOY,2019123100
 LAT,53.987
 LON,254.883
 timezn,18
